@@ -1,5 +1,6 @@
-import { listToTree } from './tree/index'
+import { listToTree,treeToList } from './tree/index'
 
-export default {
-    listToTree
+export {
+    listToTree,
+    treeToList
 }

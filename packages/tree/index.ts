@@ -51,6 +51,25 @@ const listToTree = (key: string, parentKey: string, list: Array<any>):Array<TNod
     return parents
 }
 
+const parseTree = (trees: Array<TNode>, list:Array<any>) =>{
+    trees.map(item =>{
+        const _item: { [key:string]: any } = {...item, children: null }
+        delete _item['children']
+        list.push(_item)
+        if(item.children && item.children.length>0){
+            parseTree(item.children,list)
+        }
+    })
+}
+/**
+ * 树型数组,转数组
+ * @param trees
+ * @param list
+ */
+const treeToList = (trees: Array<TNode>, list:Array<any> = []): Array<any> => {
+    parseTree(trees,list)
+    return list;
+}
 /**
  * 查找数的节点
  * @param key
@@ -63,5 +82,7 @@ const findNode = (key: string,tree: Array<TNode>, result: Array<TNode> = []):Arr
 
 export {
     listToTree,
-    translator
+    translator,
+    parseTree,
+    treeToList
 }

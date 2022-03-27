@@ -1,4 +1,4 @@
-const dtools = require('../lib/index.umd')
+const dtools = require('../lib/index.cjs')
 
 const list = [
     {
@@ -66,6 +66,9 @@ const list = [
 
 
 
-console.log(JSON.stringify(dtools.listToTree('id','parentId',list)))
-console.log(list)
+const tree = dtools.listToTree('id','parentId',list)
 
+const _list:Array<any> = []
+dtools.treeToList(tree,_list)
+console.log(_list)
+console.log(JSON.stringify(tree))

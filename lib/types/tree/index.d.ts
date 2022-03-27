@@ -18,4 +18,11 @@ declare const translator: (key: string, parentKey: string, parents: Array<any>, 
  * @param tree 结果数
  */
 declare const listToTree: (key: string, parentKey: string, list: Array<any>) => Array<TNode>;
-export { listToTree, translator };
+declare const parseTree: (trees: Array<TNode>, list: Array<any>) => void;
+/**
+ * 树型数组,转数组
+ * @param trees
+ * @param list
+ */
+declare const treeToList: (trees: Array<TNode>, list?: Array<any>) => Array<any>;
+export { listToTree, translator, parseTree, treeToList };

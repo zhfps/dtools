@@ -1,11 +1,16 @@
 {
-  "name": "@it-dog-zhang/dtools",
+  "name": "@it_dog_zhang/dtools",
   "version": "1.0.0",
   "description": "common tools",
+  "keywords": [
+    "utils",
+    "tool"
+  ],
   "main": "./lib/index.cjs.js",
   "module": "./lib/index.esm.js",
   "types": "./lib/types/index.d.ts",
-  "author": "it_dog_zhang@163.com",
+  "author": "it_dog_zhang",
+  "repository": "https://github.com/zhfps/dtools.git",
   "license": "MIT",
   "scripts": {
     "dev": "rollup -w -c",
