@@ -68,7 +68,8 @@ const list = [
 
 const tree = dtools.listToTree('id','parentId',list)
 
-const _list:Array<any> = []
-dtools.treeToList(tree,_list)
-console.log(_list)
-console.log(JSON.stringify(tree))
+// const _list:Array<any> = []
+// dtools.treeToList(tree,_list)
+// console.log(_list)
+// console.log(JSON.stringify(tree))
+console.log(dtools.findNode('id', 3, tree))

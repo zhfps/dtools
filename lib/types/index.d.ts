@@ -1,2 +1,2 @@
-import { listToTree, treeToList } from './tree/index';
-export { listToTree, treeToList };
+import { listToTree, treeToList, findNode } from './tree/index';
+export { listToTree, treeToList, findNode };

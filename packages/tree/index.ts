@@ -1,4 +1,4 @@
-export interface TNode {
+interface TNode {
     id:string|number,
     parentId: string|number,
     [key:string]: any,
@@ -70,19 +70,40 @@ const treeToList = (trees: Array<TNode>, list:Array<any> = []): Array<any> => {
     parseTree(trees,list)
     return list;
 }
+
+
+const findItem = (key: string, value: string|number, tree: Array<TNode>, node:TNode) => {
+    tree.map(item =>{
+        if(item[key] == value){
+            Object.assign(node,item)
+        }else if(item.children && item.children.length>0){
+            findItem(key,value,item.children,node)
+        }
+    })
+}
+
 /**
  * 查找数的节点
  * @param key
  * @param tree
  * @param result
  */
-const findNode = (key: string,tree: Array<TNode>, result: Array<TNode> = []):Array<TNode> =>{
-    return  result
+const findNode = (key: string, value: string, tree: Array<TNode>): TNode|undefined => {
+    const node: TNode = {
+        id: -1,
+        parentId: 0,
+        children: []
+    }
+    findItem(key,value,tree,node)
+    return node
 }
 
 export {
+    TNode,
     listToTree,
     translator,
     parseTree,
-    treeToList
+    treeToList,
+    findItem,
+    findNode
 }

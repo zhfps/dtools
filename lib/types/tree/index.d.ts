@@ -1,4 +1,4 @@
-export interface TNode {
+interface TNode {
     id: string | number;
     parentId: string | number;
     [key: string]: any;
@@ -25,4 +25,12 @@ declare const parseTree: (trees: Array<TNode>, list: Array<any>) => void;
  * @param list
  */
 declare const treeToList: (trees: Array<TNode>, list?: Array<any>) => Array<any>;
-export { listToTree, translator, parseTree, treeToList };
+declare const findItem: (key: string, value: string | number, tree: Array<TNode>, node: TNode) => void;
+/**
+ * 查找数的节点
+ * @param key
+ * @param tree
+ * @param result
+ */
+declare const findNode: (key: string, value: string, tree: Array<TNode>) => TNode | undefined;
+export { TNode, listToTree, translator, parseTree, treeToList, findItem, findNode };

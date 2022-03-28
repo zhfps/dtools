@@ -1,6 +1,7 @@
-import { listToTree,treeToList } from './tree/index'
+import { listToTree,treeToList, findNode } from './tree/index'
 
 export {
     listToTree,
-    treeToList
+    treeToList,
+    findNode
 }
